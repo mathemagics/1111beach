@@ -19,19 +19,33 @@ class LoginForm extends Component {
     this.onSubmit = this.onSubmit.bind(this);
   }
 
-  onSubmit(e) {
-    e.preventDefault();
-    this.props.loginAttempt();
+  onSubmit(props) {
+    this.props.loginAttempt(props);
   }
 
   render() {
+    const { fields: { username, password }, handleSubmit } = this.props;
     return (
-      <form onSubmit={this.onSubmit}>
-        <input />
+      <form onSubmit={handleSubmit(this.onSubmit)}>
+        <h3>Please Sign in</h3>
+        <label htmlFor="username">Username</label>
+        <input id="username" type="text" className="form-control" {...username} />
+        <label htmlFor="password">Password</label>
+        <input id="password" type="text" className="form-control" {...password} />
+        <button type="submit" className="btn btn-primary">
+          Sign In
+        </button>
+        <button type="button" className="btn btn-primary">
+          Forgot Password
+        </button>
       </form>
     );
   }
 }
+
+// function validate(values) {
+//
+// }
 
 export default reduxForm(
   {
