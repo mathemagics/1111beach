@@ -4,6 +4,7 @@ import firebase from 'firebase';
 import LoginForm from './login_form';
 import { logout } from '../actions';
 import Header from './header';
+import Content from './content';
 
 class App extends Component {
   componentWillMount() {
@@ -21,7 +22,7 @@ class App extends Component {
     return (
       <div className="app">
         <Header authenticated={authenticated} signOut={this.props.logout} />
-        <LoginForm />
+        { authenticated ? <Content /> : <LoginForm /> }
       </div>
     );
   }
