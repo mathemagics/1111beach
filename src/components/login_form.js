@@ -26,7 +26,7 @@ class LoginForm extends Component {
   render() {
     const { fields: { username, password }, handleSubmit } = this.props;
     return (
-      <form onSubmit={handleSubmit(this.onSubmit)}>
+      <form className="login-form" onSubmit={handleSubmit(this.onSubmit)}>
         <h3>Please Sign in</h3>
         <label htmlFor="username">Username</label>
         <input id="username" type="text" className="form-control" {...username} />

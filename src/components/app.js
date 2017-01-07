@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import firebase from 'firebase';
 import LoginForm from './login_form';
+import Header from './header';
 
 export default class App extends Component {
   componentWillMount() {
@@ -15,7 +16,10 @@ export default class App extends Component {
   }
   render() {
     return (
-      <LoginForm />
+      <div className="app">
+        <Header />
+        <LoginForm />
+      </div>
     );
   }
 }
