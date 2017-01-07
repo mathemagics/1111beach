@@ -1,9 +1,11 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 import firebase from 'firebase';
 import LoginForm from './login_form';
+import { logout } from '../actions';
 import Header from './header';
 
-export default class App extends Component {
+class App extends Component {
   componentWillMount() {
     const config = {
       apiKey: 'AIzaSyCqjnXf8ZYouadnYQ-kxheCsTroK8gntVY',
@@ -15,11 +17,19 @@ export default class App extends Component {
     firebase.initializeApp(config);
   }
   render() {
+    const { authenticated } = this.props;
     return (
       <div className="app">
-        <Header />
+        <Header authenticated={authenticated} signOut={this.props.logout} />
         <LoginForm />
       </div>
     );
   }
 }
+
+function mapStateToProps({ auth }) {
+  const { authenticated } = auth;
+  return { authenticated };
+}
+
+export default connect(mapStateToProps, { logout })(App);
