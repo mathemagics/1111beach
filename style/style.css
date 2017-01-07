@@ -1,4 +1,42 @@
+body {
+  background: url("https://res-2.cloudinary.com/simpleview/image/upload/c_fill,f_auto,h_1110,q_75,w_1920/v1/clients/vancouverbc/beaches_e5e4997c-1ad5-4463-b6a6-0b87279281dc.jpg") no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+
+}
+
 .login-form {
+  margin-left: auto;
+  margin-right: auto;
+  color: white;
+  margin-top: 50px;
+  max-width: 280px;
+}
+
+.login-btns {
+  margin-top: 10px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.login-form .btn {
+  border: 1px solid #4e86c8;
+  background-color: rgba(255, 255, 255, 0.9);
+  color: #4e86c8;
+
+  transition: all 0.5s ease-in-out;
+}
+.login-form .btn:hover {
+  border: 1px solid white;
+  margin-top: 2px;
+  background-color: rgba(78, 134, 200, 0.7);
+  color: white;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.3);
+}
+.about {
+  color: white;
   margin-top: 50px;
 }
 .content {
@@ -11,10 +49,11 @@
   width: 100%;
   top: 0;
   left: 0;
-  padding: 0 10px;
+  padding: 10px 20px;
 }
 
 .header-title {
+  color: white;
   float: left;
   font-size: 1.2em;
   line-height: 24px;

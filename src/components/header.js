@@ -3,7 +3,6 @@ import React from 'react';
 export default ({ authenticated, signOut }) => {
   return (
     <header className="header">
-      <div className="header-title">1111 Beach</div>
       <ul className="header-actions">
         {authenticated ?
           <li>
@@ -12,9 +11,6 @@ export default ({ authenticated, signOut }) => {
             </button>
           </li> :
           null}
-        <li>
-          <button className="nav-btn">About</button>
-        </li>
       </ul>
     </header>
   );

@@ -19,7 +19,6 @@ class MessageBoard extends Component {
   }
   renderPosts() {
     return _.map(this.props.posts, (post) => {
-      console.log(post.id);
       return (
         <li className="list-group-item" key={post.id}>
           <span className="float-xs-right">{post.user}</span>

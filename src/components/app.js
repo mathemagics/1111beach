@@ -22,7 +22,7 @@ class App extends Component {
     return (
       <div className="app">
         <Header authenticated={authenticated} signOut={this.props.logout} />
-        { authenticated ? <Content /> : <LoginForm /> }
+        { authenticated ? <Content /> : <div><LoginForm /></div> }
       </div>
     );
   }
