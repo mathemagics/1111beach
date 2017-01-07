@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import _ from 'lodash';
 
 class MessageBoard extends Component {
   constructor(props) {
@@ -16,6 +17,17 @@ class MessageBoard extends Component {
     this.props.makePost(this.state.message);
     this.setState({ message: '' });
   }
+  renderPosts() {
+    return _.map(this.props.posts, (post) => {
+      console.log(post.id);
+      return (
+        <li className="list-group-item" key={post.id}>
+          <span className="float-xs-right">{post.user}</span>
+          <strong>{post.msg}</strong>
+        </li>
+      );
+    });
+  }
   render() {
     return (
       <div className="message-board">
@@ -23,7 +35,7 @@ class MessageBoard extends Component {
         <button className="btn btn-primary" onClick={this.submitPost}>Post</button>
         <h3> Posts </h3>
         <ul className="list-group">
-          <li className="list-group-item"> Hey there </li>
+          {this.renderPosts()}
         </ul>
       </div>
     );
