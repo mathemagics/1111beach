@@ -11,7 +11,6 @@ class Content extends Component {
   render() {
     return (
       <div className="content">
-        Message Board
         <Messageboard makePost={this.props.makePost} posts={this.props.messages} />
       </div>
     );

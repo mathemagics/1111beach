@@ -150,3 +150,18 @@
     font-size: rem(14px);
     line-height: 24px;
 }
+
+.message-list {
+  background-color: rgba(0, 0, 0, 0.5);;
+  height: 36vh;
+  overflow-y: scroll;
+}
+
+.message-board textarea {
+  width: 100%;
+  resize: none;
+}
+
+.message {
+  width: 100%;
+}
