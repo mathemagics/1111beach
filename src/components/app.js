@@ -4,6 +4,7 @@ import firebase from 'firebase';
 import LoginForm from './login_form';
 import { logout } from '../actions';
 import Header from './header';
+import About from './about';
 import Content from './content';
 
 class App extends Component {
@@ -22,7 +23,7 @@ class App extends Component {
     return (
       <div className="app">
         <Header authenticated={authenticated} signOut={this.props.logout} />
-        { authenticated ? <Content /> : <div><LoginForm /></div> }
+        { authenticated ? <Content /> : <div className="home"><LoginForm /><About /></div> }
       </div>
     );
   }

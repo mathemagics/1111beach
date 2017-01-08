@@ -33,11 +33,8 @@ class LoginForm extends Component {
         <label htmlFor="password">Password</label>
         <input id="password" type="text" className="form-control" {...password} />
         <div className="login-btns">
-          <button type="submit" className="btn btn-default">
+          <button type="submit" className="btn btn-default btn-sm">
             Sign In
-          </button>
-          <button type="button" className="btn btn-default">
-            Forgot Password
           </button>
         </div>
       </form>
