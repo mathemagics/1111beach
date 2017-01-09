@@ -23,7 +23,17 @@ class App extends Component {
     return (
       <div className="app">
         <Header authenticated={authenticated} signOut={this.props.logout} />
-        { authenticated ? <Content /> : <div className="home"><LoginForm /><About /></div> }
+        {
+          authenticated ?
+            <Content /> :
+            <div>
+              <div className="background-image" />
+              <div className="home">
+                <LoginForm />
+                <About />
+              </div>
+            </div>
+        }
       </div>
     );
   }

@@ -2,31 +2,21 @@
   position: fixed;
   left: 0;
   right: 0;
-  z-index: 1;
+  z-index: -1;
+  width: 110vw;
+  height: 110vh;
 
   display: block;
   background: url('https://res-2.cloudinary.com/simpleview/image/upload/c_fill,f_auto,h_1110,q_75,w_1920/v1/clients/vancouverbc/beaches_e5e4997c-1ad5-4463-b6a6-0b87279281dc.jpg')no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
-  background-size: cover;*/;
-  width: 100vw;
-  height: 100vh;
-
+  background-size: cover;
   -webkit-filter: blur(3px);
   -moz-filter: blur(3px);
   -o-filter: blur(3px);
   -ms-filter: blur(3px);
   filter: blur(3px);
-}
-
-.container {
-  position: fixed;
-  left: 0;
-  right: 0;
-  z-index: 9999;
-  margin-left: 20px;
-  margin-right: 20px;
 }
 
 .home {
@@ -82,6 +72,7 @@
   background-color: #ffffff;
 }
 .about-title {
+  color: #ddd;
   text-align: center;
   line-height: 55px;
   margin-left: auto;
@@ -120,29 +111,34 @@
 }
 
 .header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  background-color: #6d99cf;
+  color: white;
   position: fixed;
-  height: 60px;
-  width: 100%;
+  height: 35px;
+  width: 100vw;
   top: 0;
   left: 0;
-  padding: 10px 20px;
+  box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.4);
 }
 
 .header-title {
+  padding-left: 20px;
   color: white;
-  float: left;
-  font-size: 1.2em;
-  line-height: 24px;
+  font-family: "california";
+  font-size: 2.5em;
+  line-height: 20px;
+  text-shadow: 2px 2px #333333;
+}
+.logout {
+  color: white;
+  padding: 0px 20px;
+  background-color: rgba(0, 0, 0, 0);
+  border: 0px;
 }
 
-.header-actions {
-  float: right;
-}
-
-.header-actions li {
-  float: left;
-  list-style: none;
-}
 .nav-btn {
     display: block;
     margin: 0;
@@ -152,9 +148,19 @@
 }
 
 .message-list {
-  background-color: rgba(0, 0, 0, 0.5);;
-  height: 36vh;
+  background-color: #ffffff;
+  height: 60vh;
+  width: 100%;
   overflow-y: scroll;
+}
+
+.message-board {
+  color: rgba(239,86,79, 0.8);
+}
+
+.msg-send {
+  display: flex;
+  flex-direction: row;
 }
 
 .message-board textarea {
@@ -163,5 +169,65 @@
 }
 
 .message {
+  padding: 10px 0;
   width: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap:wrap;
+  margin: 10px 0;
+  border-bottom: 1px solid #aaa;
+}
+.msg {
+  display: flex;
+  flex-direction: row;
+  padding-left: 10px;
+}
+
+.msg-img {
+  border-radius: 99999px;
+  margin: 10px 0px 5px 0px;
+  object-fit: cover;
+  object-position: center;
+  height: 50px;
+  width: 50px;
+}
+.message-content {
+  width: 100%;
+  display: inline-block;
+  padding: 0 20px;
+}
+.message-sender {
+  font-size: 1.2em;
+  color: #222;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.message-body {
+  color: #888;
+}
+.message-date {
+  float: right;
+  color: #888;
+}
+::-webkit-scrollbar {
+    width: 12px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    -webkit-border-radius: 4px;
+    border-radius: 4px;
+    background: rgba(109,153,207, 0.8);
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.5);
+}
+::-webkit-scrollbar-thumb:window-inactive {
+	background: rgba(109,153,207,0.5);
 }

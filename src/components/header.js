@@ -2,16 +2,15 @@ import React from 'react';
 
 export default ({ authenticated, signOut }) => {
   return (
-    <header className="header">
-      <ul className="header-actions">
-        {authenticated ?
-          <li>
-            <button type="button" className="nav-btn" onClick={signOut}>
-              Sign out
-            </button>
-          </li> :
-          null}
-      </ul>
-    </header>
+    <div>
+      { authenticated ?
+        <header className="header">
+          <div className="header-title">1111 Beach</div>
+          <button className="logout" onClick={signOut}>
+            Sign out
+          </button>
+        </header> :
+      null}
+    </div>
   );
 };
